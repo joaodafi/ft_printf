@@ -6,7 +6,7 @@
 #    By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/10 16:02:43 by jomiguel          #+#    #+#              #
-#    Updated: 2022/05/09 16:41:37 by jomiguel         ###   ########.fr        #
+#    Updated: 2022/05/09 18:42:17 by jomiguel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRCS = ft_isalpha.c			\
 		ft_strtrim.c		\
 		ft_split.c			\
 		ft_digits_base.c	\
-		ft_uitoa_base.c		\
+		ft_ultoa_base.c		\
 		ft_itoa.c			\
 		ft_strmapi.c		\
 		ft_striteri.c		\
@@ -47,11 +47,11 @@ SRCS = ft_isalpha.c			\
 		ft_putendl_fd.c		\
 		ft_putnbr_fd.c
 
-OBJS = ${SCRS:.c=.o}
+OBJS = ${SRCS:.c=.o}
 
 NAME = libft.a
 
-CC = clang
+CC = cc
 
 RM = rm -f
 

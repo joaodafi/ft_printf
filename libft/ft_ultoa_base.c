@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digits_base.c                                   :+:      :+:    :+:   */
+/*   ft_ultoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 11:08:05 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/09 18:42:39 by jomiguel         ###   ########.fr       */
+/*   Created: 2022/05/09 10:54:56 by jomiguel          #+#    #+#             */
+/*   Updated: 2022/05/09 18:43:55 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_digits_base(unsigned long n, char *base)
+char	*ft_ultoa_base(unsigned long n, char *base)
 {
 	size_t	len;
+	char	*pt;
 
-	if (n < ft_strlen(base))
-		return (1);
-	len = 0;
-	while (n > 0)
+	len = ft_digits_base(n, base);
+	pt = malloc(sizeof(char) * (len + 1));
+	if (!pt)
+		return (NULL);
+	pt[len] = '\0';
+	while (--len)
 	{
+		pt[len] = *(base + (n % ft_strlen(base)));
 		n /= ft_strlen(base);
-		len++;
 	}
-	return (len);
+	pt[0] = *(base + (n % ft_strlen(base)));
+	return (pt);
 }
