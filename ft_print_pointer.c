@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 12:19:10 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/09 15:40:00 by jomiguel         ###   ########.fr       */
+/*   Created: 2022/05/09 15:24:53 by jomiguel          #+#    #+#             */
+/*   Updated: 2022/05/09 15:40:22 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
+int	ft_print_pointer(void *p)
+{
+	char	*s;
+	int		n;
 
-# define DECIMAL_BASE "0123456789"
-# define HEXADECIMAL_BASE "0123456789abcdef"
-
-int	ft_print_char(char c);
-int	ft_print_string(char *s);
-int	ft_print_int(int i);
-int	ft_print_unsigned_int(unsigned int ui);
-int	ft_print_pointer(void *p);
-int	ft_printf(const char *format, ...);
-
-#endif
+	if (!p)
+		return (write(1, "(nil)", 5));
+	s = ft_uitoa_base((unsigned int)p, HEXADECIMAL_BASE);
+	n = write(1, "0x", 2);
+	n += ft_print_string(s);
+	free(s);
+	return (n);
+}

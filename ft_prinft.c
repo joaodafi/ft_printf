@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:37:12 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/06 17:42:06 by jomiguel         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:31:57 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int	ft_printf(const char *format, ...)
 			format++;
 			print_len += type_selector(format, args);
 		}
-		print_len += write(1, format, 1);
+		else
+			print_len += write(1, format, 1);
 		format++;
 	}
 	va_end(args);
