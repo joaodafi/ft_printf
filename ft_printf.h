@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:19:10 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/09 15:40:00 by jomiguel         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:52:27 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_print_string(char *s);
 int	ft_print_int(int i);
 int	ft_print_unsigned_int(unsigned int ui);
 int	ft_print_pointer(void *p);
+int	ft_print_hex(unsigned int ui);
+int	ft_print_hex_upper(unsigned int ui);
 int	ft_printf(const char *format, ...);
 
 #endif
