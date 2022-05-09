@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:37:12 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/09 13:31:57 by jomiguel         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:51:11 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	type_selector(char *format, va_list args)
+static int	type_selector(const char *format, va_list args)
 {
 	if (*format == 'c')
 		return (ft_print_char(va_arg(args, int)));
