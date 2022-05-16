@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:29:44 by jomiguel          #+#    #+#             */
-/*   Updated: 2022/05/09 15:22:10 by jomiguel         ###   ########.fr       */
+/*   Updated: 2022/05/16 09:56:43 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_print_unsigned_int(unsigned int ui)
 	char	*s;
 	int		n;
 
-	s = ft_uitoa_base(ui, DECIMAL_BASE);
+	s = ft_ultoa_base(ui, DECIMAL_BASE);
 	n = ft_print_string(s);
 	free(s);
 	return (n);
